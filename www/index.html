@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Citizens Reporting App</title>
+    </head>
+    <body>
+        <header>
+            <h1>Citizens Reporting App</h1>
+            <nav>
+                <ul>
+                    <li><a href="#/report">Report Incident</a></li>
+                    <li><a href="#/request">Request Service</a></li>
+                    <li><a href="#/complaint">Report Complaint</a></li>
+                </ul>
+            </nav>
+            <div class="toggle-theme">Toggle Dark Mode</div>
+            <div class="user-profile">
+                <img src="img/user-profile.png" alt="User Profile">
+                <span>User Name</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for incidents, complaints, or requests">
+                <button>Search</button>
+            </div>
+            <div class="notifications">
+                <span>3 New Notifications</span>
+            </div>
+        </header>
+        <main>
+            <div id="report" class="tab-content">
+                <h2>Report Incident</h2>
+                <form>
+                    <label for="category">Category:</label>
+                    <select id="category" name="category">
+                        <option value="">Select a category</option>
+                        <option value="crime">Crime</option>
+                        <option value="disaster">Disaster</option>
+                        <option value="emergency">Emergency</option>
+                        <option value="medical">Medical</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </main>
+
+        <div class="app">
+            <div id="deviceready" class="blink"></div>
+
+            <div class="content">
+                <h1>Citizens Reporting App</h1>
+                <p>Welcome to the Citizens Reporting App! This app allows users to report incidents, complaints, and requests to the authorities.</p>
+                <p>To get started, please select a category from the navigation menu.</p>
+            </div>
+        </div>
+
+
+        <!-- <footer>
+            <p>�� 2022 Citizens Reporting App. All rights reserved.</p>
+        </footer> -->
+
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
