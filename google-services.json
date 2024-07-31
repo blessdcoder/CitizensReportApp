@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "197746152473",
+    "project_id": "userauth-12f03",
+    "storage_bucket": "userauth-12f03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197746152473:android:17b9eb5221cef194640688",
+        "android_client_info": {
+          "package_name": "com.example.citizensReportingApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5iJswTJYlgjptQt2UECh8hMv2jqq9SpA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
