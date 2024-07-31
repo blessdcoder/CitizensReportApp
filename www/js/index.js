@@ -32,17 +32,53 @@ function onDeviceReady() {
 }
 
 
+// Function to handle form submission for creating a new account
+document.getElementById('registrationForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get form data
+    // const name = document.getElementById('name').value;
+    // const email = document.getElementById('email').value;
+    // const password = document.getElementById('password').value;
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+        const response = await fetch(`${apiUrl}/latest`, {
+            method: 'POST',
+            headers: { 'X-Master-Key': apiKey },
+            body: JSON.stringify({ data })
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const result = await response.json();
+        console.log('Success:', result);
+        alert('Registration successful!');
+
+        // Optionally clear form
+        this.reset();
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Registration failed.');
+    }
+});
+
+
 // Function to handle form submission for login
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    var username = document.getElementById('username').value;
+    var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
 
     // Send login request to the server
     fetch(`${apiUrl}/latest`, {
         method: 'POST',
         headers: { 'X-Master-Key': apiKey },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ email, password })
     })
     .then(response => response.json())
     .then(data => {
