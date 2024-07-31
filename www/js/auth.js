@@ -6,7 +6,8 @@ function onDeviceReady() {
     // Initialize Firebase (automatically done by the plugin)
 
     // Registration
-    document.getElementById('register-btn').addEventListener('click', function() {
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
 
@@ -37,7 +38,8 @@ function onDeviceReady() {
     });
 
     // Login
-    document.getElementById('login-btn').addEventListener('click', function() {
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
 
